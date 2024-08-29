@@ -13,18 +13,24 @@ import java.awt.*;
 
 public class Engine {
 
+    // int storyProgress stores a numerical digit that is relative to the progression
+    // of the dialect between the engine and the user. For example: If the user were to
+    // input Hello at storyProgress == 1, the engine would respond to that and then progress
+    // the story by +1. 
+    // String response stores the response of the machine, its value is changed as the story progresses.
+
     public int storyProgress;
     public String response = "Talk To Me";
 
     Engine() {
 
+        //Gui Creation
         storyProgress = 1;
         JFrame f = new JFrame("A JFrame");
         f.setSize(500, 500);
         f.setLocation(300,200);
         final JTextArea textArea = new JTextArea(5, 10);
         f.getContentPane().add(BorderLayout.NORTH, textArea);
-    
     
         JPanel userCharacter = new JPanel();
         userCharacter.setSize(300,300);
@@ -49,6 +55,12 @@ public class Engine {
     userCharacter.add(displayField);
     displayField.setVisible(true);
         */
+
+        //Action Listeners for Buttons
+            // First it will clear the text box, then use the getText() function to draw a response
+            // From the engine, using the storyProgress as reference. Then it will print a response 
+            // That is stored within the function getText().
+            // There are 4 buttons
 
     button.addActionListener(new ActionListener() {
         @Override
@@ -95,6 +107,14 @@ public class Engine {
   public static void main(String[] args) {
         Engine start = new Engine();
         } // End of Main
+
+
+        // Function getText(int,int) returns a String
+
+            // Through the use of the parameters, this function will identify where
+            // The engine is in terms of the story, then the engine will compute what
+            // the user has inputted through the button. It will then return the string 
+            // So that it may be printed into the textbox.
 
   public String getText(int timeLine, int button){
     String text = buttonSpecificText(timeLine, button);
