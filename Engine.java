@@ -10,6 +10,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class Engine {
@@ -19,27 +20,71 @@ public class Engine {
     JFrame f = new JFrame("A JFrame");
     f.setSize(500, 500);
     f.setLocation(300,200);
-    final JTextArea textArea = new JTextArea(1, 10);
-    f.getContentPane().add(BorderLayout.WEST, textArea);
-    final JButton button = new JButton("Click Me");
-    f.getContentPane().add(BorderLayout.SOUTH, button);
-
+    final JTextArea textArea = new JTextArea(5, 10);
+    f.getContentPane().add(BorderLayout.NORTH, textArea);
+    
+    
     JPanel userCharacter = new JPanel();
-    userCharacter.setSize(300,500);
-    f.getContentPane().add(BorderLayout.EAST, userCharacter);
-    userCharacter.setBackground(Color.black);
+    userCharacter.setSize(300,300);
+    JPanel inputBar = new JPanel();
+    f.getContentPane().add(BorderLayout.CENTER, userCharacter);
+    f.getContentPane().add(BorderLayout.SOUTH, inputBar);
+    final JButton button = new JButton("Click Me");
+    inputBar.add(BorderLayout.WEST, button);
+    final JButton button2 = new JButton("Click Me");
+    inputBar.add(BorderLayout.EAST, button2);
+    userCharacter.setBackground(Color.GRAY);
+    final JButton button3 = new JButton("Click Me");
+    inputBar.add(BorderLayout.EAST, button3);
+    final JButton button4 = new JButton("Click Me");
+    inputBar.add(BorderLayout.EAST, button4);
+
 
     button.addActionListener(new ActionListener() {
-
         @Override
         public void actionPerformed(ActionEvent e) {
-            textArea.append("Button was clicked\n");
+            textArea.setText(" ");
+            textArea.append(" ONE \n");
+
+        }
+    });
+
+    button2.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            textArea.setText(" ");
+            textArea.append(" TWO \n");
+
+        }
+    });
+
+    button3.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            textArea.setText(" ");
+            textArea.append(" THREE \n");
+
+        }
+    });
+
+    button4.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            textArea.setText(" ");
+            textArea.append(" FOUR \n");
 
         }
     });
 
     f.setVisible(true);
+        }
+
+  public class GUI {
 
   }
+
+
+
+
 
 }
