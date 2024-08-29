@@ -7,17 +7,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import java.awt.*;
 
 public class Engine {
 
-  public static void main(String[] args) {
+    Engine(){
 
-    JFrame f = new JFrame("A JFrame");
+        JFrame f = new JFrame("A JFrame");
     f.setSize(500, 500);
     f.setLocation(300,200);
     final JTextArea textArea = new JTextArea(5, 10);
@@ -38,6 +41,13 @@ public class Engine {
     inputBar.add(BorderLayout.EAST, button3);
     final JButton button4 = new JButton("Click Me");
     inputBar.add(BorderLayout.EAST, button4);
+
+
+    //Frame
+    ImageIcon image = new ImageIcon(getClass().getResource("AphexTwinLogo.gif"));
+    JLabel displayField = new JLabel(image);
+    userCharacter.add(displayField);
+    displayField.setVisible(true);
 
 
     button.addActionListener(new ActionListener() {
@@ -77,8 +87,13 @@ public class Engine {
     });
 
     f.setVisible(true);
-        }
 
+    } //End Of Engine() Constructor
+  public static void main(String[] args) {
+        Engine start = new Engine();
+    
+        } // End of Main
+  
   public class GUI {
 
   }
