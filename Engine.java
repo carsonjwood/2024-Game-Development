@@ -14,6 +14,7 @@ import java.awt.*;
 public class Engine {
 
     public int storyProgress;
+    public String response = "Talk To Me";
 
     Engine() {
 
@@ -55,6 +56,7 @@ public class Engine {
             textArea.setText(" ");
             //textArea.append(" THREE \n");         // <--- Old Command, kept for reference
             textArea.append(getText(storyProgress, 1));
+            textArea.append(" " + response +  "\n" );
 
         }
     });
@@ -64,7 +66,7 @@ public class Engine {
         public void actionPerformed(ActionEvent e) {
             textArea.setText(" ");
             textArea.append(getText(storyProgress, 2));
-
+            textArea.append(" " + response +  "\n" );
         }
     });
 
@@ -73,7 +75,7 @@ public class Engine {
         public void actionPerformed(ActionEvent e) {
             textArea.setText(" ");
             textArea.append(getText(storyProgress, 3));
-
+            textArea.append(" " + response +  "\n" );
         }
     });
 
@@ -82,7 +84,7 @@ public class Engine {
         public void actionPerformed(ActionEvent e) {
             textArea.setText(" ");
             textArea.append(getText(storyProgress, 4));
-
+            textArea.append(" " + response +  "\n" );
         }
     });
 
@@ -108,9 +110,11 @@ public class Engine {
         switch (timeLine) {
             case 1:
                 text = "No fuck you";
+                response = "Okay well fuck you";
               break;
             case 2:
                 text = "Yeah";
+                response = "yeah";
               break;
             default:
               text = "Unsupported Switch";
@@ -121,9 +125,11 @@ public class Engine {
         switch (timeLine) {
             case 1:
                 text = "Maybe";
+                response = "3";
               break;
             case 2:
                 text = "No";
+                response = "222";
               break;
             default:
               text = "Unsupported Switch";
@@ -134,9 +140,11 @@ public class Engine {
         switch (timeLine) {
             case 1:
                 text = "perchance";
+                response = "pka";
               break;
             case 2:
                 text = "gilgamesh";
+                response = "kaa";
               break;
             default:
               text = "Unsupported Switch";
@@ -147,9 +155,11 @@ public class Engine {
         switch (timeLine) {
             case 1:
                 text = "Shutup";
+                response = "no";
               break;
             case 2:
                 text = "you liar";
+                response = "Nothing could compel my digital mind to lie";
               break;
             default:
               text = "Unsupported Switch";
