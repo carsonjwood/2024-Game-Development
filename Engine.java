@@ -99,10 +99,6 @@ public class Engine {
   public static void main(String[] args) {
         Engine start = new Engine();
         } // End of Main
-  
-  public class GUI {
-    
-  }
 
   public String getText(int timeLine, int button){
     String text = buttonSpecificText(timeLine, button);
