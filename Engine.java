@@ -96,7 +96,7 @@ public class Engine {
         public void actionPerformed(ActionEvent e) {
             textArea.setText(" ");
             textArea.append(getText(storyProgress, 4));
-            textArea.append(" " + response +  "\n" );
+            textArea.append("  //  Response" + response +  "\n" );
         }
     });
 
