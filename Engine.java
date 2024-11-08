@@ -21,6 +21,7 @@ public class Engine {
 
     public int storyProgress;
     public String response = "Talk To Me";
+    public int health = 100;
 
     Engine() {
 
@@ -37,14 +38,14 @@ public class Engine {
         JPanel inputBar = new JPanel();
         f.getContentPane().add(BorderLayout.CENTER, userCharacter);
         f.getContentPane().add(BorderLayout.SOUTH, inputBar);
-        final JButton button = new JButton("Click Me");
+        final JButton button = new JButton("Attack");
         inputBar.add(BorderLayout.WEST, button);
-        final JButton button2 = new JButton("Click Me");
+        final JButton button2 = new JButton("Guard");
         inputBar.add(BorderLayout.EAST, button2);
         userCharacter.setBackground(Color.GRAY);
-        final JButton button3 = new JButton("Click Me");
+        final JButton button3 = new JButton("Talk");
         inputBar.add(BorderLayout.EAST, button3);
-        final JButton button4 = new JButton("Click Me");
+        final JButton button4 = new JButton("Run");
         inputBar.add(BorderLayout.EAST, button4);
 
 
@@ -129,12 +130,12 @@ public class Engine {
         //Text Responses for button 1
         switch (timeLine) {
             case 1:
-                text = "No fuck you";
-                response = "Okay well fuck you";
+                text = "Character Attacks.";
+                response = "Character delt " + "damage.";
               break;
             case 2:
-                text = "Yeah";
-                response = "yeah";
+                text = "Character Attacks.";
+                response = "Character was ak";
               break;
             default:
               text = "Unsupported Switch";
